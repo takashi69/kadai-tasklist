@@ -6,6 +6,8 @@
         <div class="alert alert-warning">
           <ul>
             <% task.errors.full_messages.each do |task| %>
+ <!--full_messagesはrailsのきまり-->
+
               <li><%= task %></li>
             <% end %>
           </ul>
@@ -27,3 +29,4 @@
   </div>
   
 </div>
+
