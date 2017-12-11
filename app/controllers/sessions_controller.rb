@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  #beforeの所が必要？
+  
+  
   def new
   end
 
