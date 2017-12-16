@@ -1,12 +1,11 @@
 class TasksController < ApplicationController
   #login要求をいれる？ここじゃないのか？
-  before_action :require_user_logged_in, only: [:index, :show]
+  before_action :require_user_logged_in
   
-#CRUD操作ができる人を限定するコードを挿入
-  before_action :correct_user,   only: [  :update, :destroy
-  ]
+#CRUD操作ができる人を限定する
+  before_action :correct_user,   only: [:show,:edit,:update, :destroy  ]
 
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+#  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
 
 
@@ -69,9 +68,9 @@ class TasksController < ApplicationController
     end
   end
 
-  def set_task
-    @task = Task.find(params[:id])
-  end
+#  def set_task
+#    @task = Task.find(params[:id])
+#  end
 
 
   # Strong Parameter
